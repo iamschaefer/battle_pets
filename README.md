@@ -16,9 +16,6 @@ Install rails bins,
 Install all gems,
 `bundle install`
 
-Install rspec,
-`rails generate rspec:install`
-
 Load and seed the databases,
 `rake db:schema:load db:seed`
 
