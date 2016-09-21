@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pet Contests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contest type</th>
+      <th>Challenger</th>
+      <th>Challenged</th>
+      <th>Workflow state</th>
+      <th>Winner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pet_contests.each do |pet_contest| %>
+      <tr>
+        <td><%= pet_contest.contest_type %></td>
+        <td><%= pet_contest.challenger %></td>
+        <td><%= pet_contest.challenged %></td>
+        <td><%= pet_contest.workflow_state %></td>
+        <td><%= pet_contest.winner %></td>
+        <td><%= link_to 'Show', pet_contest %></td>
+        <td><%= link_to 'Edit', edit_pet_contest_path(pet_contest) %></td>
+        <td><%= link_to 'Destroy', pet_contest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pet Contest', new_pet_contest_path %>

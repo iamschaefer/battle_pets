@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contest type:</strong>
+  <%= @pet_contest.contest_type %>
+</p>
+
+<p>
+  <strong>Challenger:</strong>
+  <%= @pet_contest.challenger.name %>
+</p>
+
+<p>
+  <strong>Challenged:</strong>
+  <%= @pet_contest.challenged.name %>
+</p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @pet_contest.winner %>
+</p>
+
+<p>
+  <strong>Workflow state:</strong>
+  <%= @pet_contest.workflow_state %>
+</p>
+
+<%= link_to 'Edit', edit_pet_contest_path(@pet_contest) %> |
+<%= link_to 'Back', pet_contests_path %>

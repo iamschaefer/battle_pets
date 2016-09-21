@@ -1,0 +1,49 @@
+<h1>Editing Pet Contest</h1>
+<% pet_contest = @pet_contest %>
+<%= form_for(pet_contest) do |f| %>
+    <% if pet_contest.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(pet_contest.errors.count, "error") %> prohibited this pet_contest from being saved:</h2>
+
+          <ul>
+            <% pet_contest.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= hidden_field_tag(:contest_action, 'accept') %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit('Accept contest') %>
+    </div>
+<% end %>
+
+
+<%= form_for(pet_contest) do |f| %>
+    <% if pet_contest.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(pet_contest.errors.count, "error") %> prohibited this pet_contest from being saved:</h2>
+
+          <ul>
+            <% pet_contest.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= hidden_field_tag(:contest_action, 'cancel') %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit('Cancel contest') %>
+    </div>
+<% end %>
+
+<%= link_to 'Show', @pet_contest %> |
+<%= link_to 'Back', pet_contests_path %>
